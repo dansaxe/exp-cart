@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<% include par/head %>
+<body>
+
+<!--menu-->
+<% include par/nav %>
+<!--menu-->
+
+<div id="container-fluid">
+<div id="wrap">
+<div class="row">
+<div class="well col-xs-12" style="color:black">
+
+<form action="/res" method="post">
+タイトル:<input name="name" type="text" value=""><br>
+sku:<input name="sku" type="text" value=""><br>
+かかく:<input name="pri" type="text" value=""><br>
+img:<input name="img" type="text" value=""><br>
+リリース:<input name="rel" type="text" value=""><br>
+カテゴリ:<input name="cat" type="text" value=""><br>
+song1:<input name="1" type="text" value=""><br>
+song2:<input name="2" type="text" value=""><br>
+song3:<input name="3" type="text" value=""><br>
+song4:<input name="4" type="text" value=""><br>
+song5:<input name="5" type="text" value=""><br>
+
+<br><br>
+<input target="_blank" type="submit" class="btn btn btn-black" value="CART">
+
+</form>
+</div>
+</div><!--row-->
+
+</div><!-- /container -->
+
+<!--ここからフッター-->
+
+<!-- col12 -->
+<div class="col-xs-12" style="background-color:black">
+<br>
+
+<!--FOOT-->
+<% include par/foot %>
+<!--FOOT-->
+
+</div><!--row-->
+</div><!-- /col12 -->
+
+</body>
+

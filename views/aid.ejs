@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<% include par/head %>
+<body>
+
+<!--menu-->
+<% include par/shop/nav %>
+<!--menu-->
+
+<div id="container-fluid">
+<!--ここから -->
+
+<!-- 行-->
+<div class="row">
+<!--- ------------------------------------- side left ------->
+<div class="well col-lg-2 col-sm-12">
+<% if(usr) {%> 
+<div class="label label-info">welcome: <%=usr%></div>
+<%}else{ %>
+<div class="label label-warning">not logged in</div>
+<%} %>
+</div>
+<!--- ------------------------------------- side left ------->
+
+<!-- col10 -->
+<div class="well col-md-8" style="color:black">
+<%if(taid){%>
+<%=taid.buyer.email%><br>
+<%=taid.buyer.name1%><br>
+<%=taid.buyer.name2%><br>
+<%=taid.buyer.phone%><br>
+<%=taid.shipping_address.zip%><br>
+<%=taid.shipping_address.city%><br>
+<%=taid.shipping_address.state%><br>
+<%=taid.shipping_address.line1%><br>
+<%=taid.shipping_address.line2%><br>
+<%}%>
+
+<button id="paidy-checkout-button" onclick="paidyPay()">Paidy</button>
+<script type="text/javascript" src="https://apps.paidy.com/"></script>
+<script src="son/load.js"></script>
+
+<br>
+     
+</div>
+<!--col1-->
+<div class="well col-sm-2 hidden-xs"></div><!-- /col1 -->
+
+
+</div><!--row-->
+
+
+<!-- ここまで-->
+
+<hr>
+
+
+<!--フッター-->
+<div class="col-sm-12" style="background-color:black">
+<br>
+
+<!--FOOT-->	
+<% include par/foot %>
+<!--FOOT-->
+
+</div><!-- /col12-->
+
+</body>
+</html>
+

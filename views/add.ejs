@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<% include par/head %>
+<body>
+
+<!--menu-->
+<% include par/shop/nav %>
+<!--menu-->
+
+<div id="container-fluid">
+
+<div class="row">
+<!--- ------------------------------------- side left ------->
+<div class="well col-lg-2 col-sm-12">
+<% if(usr) {%> 
+<div class="label label-info">welcome: <%=usr%></div>
+<%}else{ %>
+<div class="label label-warning">not logged in</div>
+<%} %>
+</div>
+<!--- ------------------------------------- side left ------->
+
+<!-- col10 -->
+<div class="well col-md-8" style="color:black">
+
+<br>
+
+<%if(skutmp){%>
+<%if(skutmp.uni!==0){%>
+<img src=<%=skumer.img%>>
+<br>
+uni:<%=skutmp.uni%>
+<br>
+name:<%=skutmp.usr%>
+<br>
+sku:TMS-<%=sku%>
+<br>
+pri:<%=skumer.pri%>
+<br>
+をついか。
+<% }else{ %>
+no uni
+<% } %>
+<% }else{ %>
+no skutmp
+
+<% } %>
+
+<form action="/cart" method="get" >
+<button type="submit" value="CART" class="btn btn-black">CART</button>
+</form>
+</div>
+<!--col1-->
+<div class="well col-sm-2 hidden-xs"></div><!-- /col1 -->
+
+
+</div><!--row-->
+
+
+<!-- ここまで-->
+
+<hr>
+
+
+
+
+<!--フッター-->
+<div class="col-sm-12" style="background-color:black">
+<br>
+
+<!--FOOT-->	
+<% include par/foot %>
+<!--FOOT-->
+
+</div><!-- /col12-->
+
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<% include par/head %>
+<body>
+
+<!--menu-->
+<% include par/nav %>
+<!--menu-->
+
+<div id="container-fluid">
+<div id="wrap">
+<div class="row">
+
+<div class="well col-md-2 col-xs-12" style="color:black"></div>
+
+
+<div class="well col-md-8 col-xs-12" style="color:black">
+<%if(mer){%>
+<%for(var i=0;i<mer.length;i++){%>
+
+<div id="<%=mer[i].sku%>"></div>
+<%=mer[i].rowid %>
+<%=mer[i].rowid/2 %>
+<a href="shop#<%=mer[i].sku%>" target="_blank">
+<img src=<%=mer[i].img%>></a>
+<br>
+<%=mer[i].name%>
+TMS-<%=mer[i].sku%>
+<form action="/add" method="post">
+<input id="number" name="uni" type="number" value="0" min="0" size="1">
+<input  name="mer" type="hidden" value=<%=mer%>>
+<input  name="pri" type="hidden" value=<%=mer[i].pri%>>
+<input  name="sku" type="hidden" value=<%=mer[i].sku%>>
+<input type="submit" class="btn btn-black" value="submit">
+</form>
+
+<br>
+
+<%}%>
+<%}%>
+</div>
+
+<div class="well col-md-2 col-xs-12" style="color:black"></div>
+
+</div><!--row-->
+
+
+</div><!-- /container -->
+
+<!--ここからフッター-->
+
+<!-- col12 -->
+<div class="col-xs-12" style="background-color:black">
+<br>
+
+<!--FOOT-->
+<% include par/foot %>
+<!--FOOT-->
+
+</div><!--row-->
+</div><!-- /col12 -->
+
+</body>
+

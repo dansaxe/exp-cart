@@ -1,0 +1,1 @@
+{"intent":"sale","payer":{"payment_method":"paypal"},"redirect_urls":{"return_url":"http://localhost:3002/success","cancel_url":"http://localhost:3002/cancel"},"transactions":[{"item_list":{"items":[{"quantity":2}]},"amount":{"currency":"JPY","total":"3000"},"description":"This is the payment description."}]}

@@ -1,0 +1,67 @@
+<% include par/head %>
+<body>
+<% include par/shop/nav %>
+
+<div class="title5"><img src="img/ban/logo.png" width="32" height="32" alt=""/>CART</div>
+<div class="container-fluid">
+<div class="row">
+
+<!--- ------------------------------------- side left ------->
+<div class="well col-md-2 col-sm-12">
+<% if(usr) {%> 
+<div class="label label-info">welcome: <%=usr%></div>
+<%}else{ %>
+<div class="label label-warning">not logged in</div>
+<%} %>
+</div>
+<!--- ------------------------------------- side left ------->
+
+
+<div class="well col-md-8" style="color:black"  >
+
+<div class="well col-md-6" style="color:black"  >
+<%if(seltmp&&mer){%>
+<%for(var i=0;i<seltmp.length;i++){%>
+<%if(seltmp[i].uni!==0){%>
+<img src=<%=mer[i].img%>>
+<br>
+sku:<%=seltmp[i].sku%>
+uni:<%=seltmp[i].uni%>
+pri:<%=mer[i].pri%>
+<br>
+<%}%>
+<%}%>
+</div>
+
+<div class="well col-md-6" style="color:black"  >
+
+<%if(sum){%>
+sum:<%=sum%>
+<%}%>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://localhost:3022/aid", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+//        var str = JSON.stringify(cb);
+//        console.log(str);
+        xhr.send();
+</script>
+<br>
+<form method="post" action="/aid">
+<button type="submit" >submit</button>
+</form>
+
+<%}else{%>
+no data
+<%}%>
+</div>
+</div>
+
+<!-- col1 -->
+<div class="col-md-2 hidden-xs"></div><!-- /col1-->
+
+</div> <!-- /row -->
+</div><!-- /container -->
+
+<% include par/foot %>
+
